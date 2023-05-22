@@ -1,20 +1,23 @@
+{% load static %}
+
 <!DOCTYPE html>
+<head>
+  <title>Cozy Recipes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+    *{font-family: Poppins, sans-serif}
+  </style>
+</head>
 
 <header>
-  <h1>Welcome to the Recipes App</h1>
+  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" width="100%" height="240px" style="object-fit:cover">
+  <h1 style="text-align:center">Cozy Recipes</h1>
 </header>
 
-<body>
-  <p>In this app you will be able to do the following:</p>
-    <ul>
-      <li>Browse recipes</li>
-      <li>Search for recipes by name</li>
-      <li>Search for recipes by ingredient</li>
-      <li>Rate recipes</li>
-      <li>Create your own profile</li>
-    </ul>
+<body style="text-align:center">
+  <p>Enter the app to<br>create a profile,<br>browse and rate recipes, and<br>search for recipes by ingredient.
 </body>
 
-<footer>
-  My first Django project.
+<footer style="margin-top:50px">
+  <p style="font-size:8px; text-align:center">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
 </footer>
