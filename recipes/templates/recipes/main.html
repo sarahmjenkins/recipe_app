@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<head>
+  <title>Cozy Recipes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
+    * {
+      font-family: Poppins, sans-serif
+    }
+  </style>
+</head>
+
+<header>
+  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" width="100%" height="240px"
+    style="object-fit:cover">
+  <h1 style="text-align:center">Cozy Recipes</h1>
+</header>
+
+<body>
+  <p style="text-align:center">Click on a recipe card below to view the recipe.</p>
+  <div style="display:grid; grid-template-columns: auto auto auto; padding:25px">
+    {% for object in object_list %}
+    <div style="padding:25px; border:2px solid; margin:25px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <img src="{{object.pic.url}}" width="300px">
+      <h3>{{object.name}}</h3>
+    </div>    
+    {% endfor %}
+  </div>
+</body>

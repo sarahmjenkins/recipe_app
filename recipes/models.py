@@ -20,7 +20,7 @@ class Recipe(models.Model):
     ingredients = models.CharField(max_length=255)
     difficulty = models.CharField(max_length=12, choices=difficulty_choices, default='na')
     rating = models.CharField(max_length=4, choices=rating_choices, default='na')
-    pic = models.ImageField(upload_to='customers', default='no_picture.jpg')
+    pic = models.ImageField(upload_to='recipes', default='no_picture.jpg')
 
     def __str__(self):
         return str(self.name)
