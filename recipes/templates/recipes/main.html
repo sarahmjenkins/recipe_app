@@ -23,10 +23,12 @@
   <p style="text-align:center">Click on a recipe card below to view the recipe.</p>
   <div style="display:grid; grid-template-columns: auto auto auto; padding:25px">
     {% for object in object_list %}
-    <div style="padding:25px; border:2px solid; margin:25px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:20px;">
-      <img src="{{object.pic.url}}" width="300px" style="border-radius:20px; border:1pt solid">
-      <h3>{{object.name}}</h3>
-    </div>   
+    <a href="{{object.get_absolute_url}}">
+      <div style="padding:25px; border:2px solid; margin:25px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:20px;">
+        <img src="{{object.pic.url}}" width="300px" style="border-radius:20px; border:1pt solid">
+        <h3>{{object.name}}</h3>
+      </div>   
+    </a>
     {% endfor %} 
   </div>
 </body>
