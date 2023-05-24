@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 # Create your models here.
 difficulty_choices = (
@@ -24,3 +25,6 @@ class Recipe(models.Model):
 
     def __str__(self):
         return str(self.name)
+    
+    def get_absolute_url(self):
+        return reverse ('recipes:detail', kwargs={'pk': self.pk})
