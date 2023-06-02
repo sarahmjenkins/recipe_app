@@ -67,30 +67,11 @@ class RecipeModelTest(TestCase):
         self.assertEqual(recipe.get_absolute_url(), '/recipes/list/1')
     
 class RecipeFormTest(TestCase):
-    def setUpTestData():
-        Recipe.objects.create(
-            name='Hot Chocolate',
-            cooking_time='5',
-            ingredients='milk, hot chocolate mix, marshmallows',
-            rating='yum'
-        )
 
-# Value of field
-# Format of field
-# Length of field
-# protected view
-
-    def test_form_input_value(self):
-        recipe = Recipe.objects.get(id=1)
-        recipe_name = recipe._meta.get_field('name').verbose_name
-        form = RecipeSearchForm()
-        form_value = form.get(recipe_name)
-        self.assertEqual(form_value, recipe_name)
-
-
-    # def test_form_input_format:
+    def test_form_valid_data(self):
+        form = RecipeSearchForm(data={'chart_type': '#1', 'recipe_name': 'Brownies'})
+        self.assertTrue(form.is_valid())
     
-    # def test_form_input_max_length:
-    #     recipe = Recipe.objects.get(id=1)
-    #     recipe_rating_max_length = recipe._meta.get_field('rating').max_length
-    #     self.assertEqual(recipe_rating_max_l
+    def test_form_invalid_data(self):
+        form = RecipeSearchForm(data={'chart_type': '#6', 'recipe_name': 'Cookies'})
+        self.assertFalse(form.is_valid())
