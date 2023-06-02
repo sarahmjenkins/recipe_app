@@ -2,13 +2,6 @@ from django.db import models
 from django.shortcuts import reverse
 
 # Create your models here.
-difficulty_choices = (
-    ('easy', 'Easy'),
-    ('medium', 'Medium'),
-    ('intermediate', 'Intermediate'),
-    ('hard', 'Hard')
-)
-
 rating_choices = (
     ('yum', 'Yum'),
     ('meh', 'Meh'),
@@ -19,9 +12,20 @@ class Recipe(models.Model):
     name = models.CharField(max_length=50)
     cooking_time = models.FloatField()
     ingredients = models.CharField(max_length=255)
-    difficulty = models.CharField(max_length=12, choices=difficulty_choices, default='na')
     rating = models.CharField(max_length=4, choices=rating_choices, default='na')
     pic = models.ImageField(upload_to='recipes', default='no_picture.jpg')
+
+    def calculate_difficulty(self):
+        ingredients = self.ingredients.split(', ')
+        if self.cooking_time < 30 and len(ingredients) < 10:
+            difficulty = 'Easy'
+        if self.cooking_time < 30 and len(ingredients) >= 10:
+            difficulty = 'Medium'
+        if self.cooking_time >= 30 and len(ingredients) < 10:
+            difficulty = "Intermediate"
+        if self.cooking_time >= 30 and len(ingredients) >= 10:
+            difficulty = "Hard"
+        return difficulty
 
     def __str__(self):
         return str(self.name)
