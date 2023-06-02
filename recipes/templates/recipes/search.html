@@ -18,4 +18,27 @@
     style="object-fit:cover">
   <h5 style="text-align:center"><a href="{% url 'logout' %}">Log Out</a></h5>
   <h1 style="text-align:center">Cozy Recipes</h1>
+  <h2 style="text-align:center">Search for a Recipe</h2>
 </header>
+
+<body>
+  <form action="" method="POST" style="text-align:center">
+    {% csrf_token %} 
+    {{form}}
+    <button type="submit">Search</button>
+  </form>
+
+  <br>
+
+  <div style="text-align:center">
+    {% if recipes_df %} 
+      {{recipes_df|safe}}
+      <br>
+      <img src="data:image/png;base64, {{chart|safe}}">
+    {% else %} 
+      <h3>No matching recipe(s) found.</h3>
+    {% endif %}
+  </div>
+
+  <h5 style="text-align:center"><a href="/recipes/list">Return to view all recipes.</a></h5>
+</body>
