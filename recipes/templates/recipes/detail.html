@@ -4,38 +4,31 @@
 
 <head>
   <title>{{object.name}} Recipe</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
-
-    * {
-      font-family: Poppins, sans-serif
-    }
-  </style>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <header>
-  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" width="100%" height="240px"
-    style="object-fit:cover">
-  <h5 style="text-align:center"><a href="{% url 'logout' %}">Log Out</a></h5>
-  <h1 style="text-align:center">Cozy Recipes</h1>
+  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" class="header-image">
+  <h5 class="logout"><a href="{% url 'logout' %}">Log Out</a></h5>
+  <h1 >Cozy Recipes</h1>
 </header>
 
-<body style="text-align:center">
-  <div style="border:2px solid; border-radius:20px; display:inline-block; width:60%">
+<body>
+  <div class="recipe-detail-card">
     <h2>How to make {{object.name}}</h2>
 
     <b>Recipe Name: </b> {{object.name}} <br>
     <b>Ingredients: </b> {{object.ingredients}} <br>
     <b>Cooking Time: </b> {{object.cooking_time}} minutes <br>
     <b>Difficulty: </b> {{object.calculate_difficulty}} <br>
-    <b>Rating: </b> {{object.rating}} <br>
+    <b>Rating: </b> {{object.rating}} <br><br>
 
-    <img src="{{object.pic.url}}" width="300" />
+    <img src="{{object.pic.url}}" class="recipe-detail-image"/>
 
     <h5><a href="/recipes/list">Return to view all recipes.</a></h5>
   </div>
 </body>
 
-<footer style="margin-top:50px">
-  <p style="font-size:8px; text-align:center">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
+<footer>
+  <p class="photo-attribution">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
 </footer>

@@ -4,30 +4,23 @@
 
 <head>
   <title>Cozy Recipes</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
-
-    * {
-      font-family: Poppins, sans-serif
-    }
-  </style>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <header>
-  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" width="100%" height="240px"
-    style="object-fit:cover">
-  <h5 style="text-align:center"><a href="{% url 'logout' %}">Log Out</a></h5>
-  <h1 style="text-align:center">Cozy Recipes</h1>
-  <h5 style="text-align:center"><a href="/recipes/search">Search for recipes by recipe name or ingredient.</a></h5>
+  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" class="header-image">
+  <h5 class="logout"><a href="{% url 'logout' %}">Log Out</a></h5>
+  <h1>Cozy Recipes</h1>
+  <h5><a href="/recipes/search">Search for recipes by recipe name or ingredient.</a></h5>
 </header>
 
 <body>
-  <p style="text-align:center">Click on a recipe card below to view the recipe.</p>
-  <div style="display:grid; grid-template-columns: auto auto auto; padding:25px">
+  <p>Click on a recipe card below to view the recipe.</p>
+  <div class="recipe-list-container" >
     {% for object in object_list %}
     <a href="{{object.get_absolute_url}}">
-      <div style="padding:25px; border:2px solid; margin:25px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:20px;">
-        <img src="{{object.pic.url}}" width="300px" style="border-radius:20px; border:1pt solid">
+      <div class="recipe-card" >
+        <img src="{{object.pic.url}}" class="recipe-image">
         <h3>{{object.name}}</h3>
       </div>   
     </a>
@@ -35,6 +28,6 @@
   </div>
 </body>
 
-<footer style="margin-top:50px">
-  <p style="font-size:8px; text-align:center">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
+<footer>
+  <p class="photo-attribution">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
 </footer>
