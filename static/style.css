@@ -1,11 +1,11 @@
  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
 
  * {
-   font-family: Poppins, sans-serif
+   font-family: Poppins, sans-serif;
  }
 
 body {
-  text-align: center
+  text-align: center;
 }
 
 .header-image {
@@ -24,6 +24,10 @@ h5 {
 
 .logout {
   text-align: right
+}
+
+a {
+  color: #65553f;
 }
 
 .recipe-list-container {
@@ -64,6 +68,15 @@ table {
   margin: auto
 }
 
+th {
+  padding: 5px;
+  text-align: center
+}
+
+td {
+  padding: 5px
+}
+
 .search-result {
   text-align: center
 }
@@ -75,4 +88,33 @@ footer {
 .photo-attribution {
   font-size: 8px;
   text-align: center
+}
+
+.website-counter-container,
+.website-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.website-counter-container {
+  border: 2px solid;
+  border-radius: 20px;
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+  border: 2px solid #65553f;
+}
+
+.website-counter {
+  font-weight: 700;
+}
+
+#reset {
+  background-color: #FFFFFF;
+  cursor: pointer;
+  padding: 5px 15px;
+  border: 2px solid #65553f;
+  border-radius: 10px;
 }
