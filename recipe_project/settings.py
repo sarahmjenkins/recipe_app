@@ -26,7 +26,10 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://intense-stream-67991.herokuapp.com/']
+ALLOWED_HOSTS = [
+    'http://127.0.0.1/',
+    'https://intense-stream-67991.herokuapp.com/'
+]
 
 
 # Application definition
