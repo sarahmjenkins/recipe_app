@@ -15,6 +15,7 @@ This is an app specifically for cozy, comfort food recipes! It was created as th
 This app is deployed on [Heroku](https://intense-stream-67991.herokuapp.com/). To try out the features, the following test log in information is provided:
 
 username: this_is_a_test
+
 password: testuser
 
 ## Features to Look Forward To
