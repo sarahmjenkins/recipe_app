@@ -9,12 +9,16 @@
 
 <header>
   <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" class="header-image">
+  <div class="topnav">
+    <a href="/">Home</a>
+    <a href="#">About</a>
+    <a href="{% url 'login' %}">Log In</a>
+  </div>
   <h1>Cozy Recipes</h1>
 </header>
 
 <body>
   <p>You have successfully logged out.</p>
-  <h5><a href="/">Return to the home page.</a></h5>
 </body>
 
 <footer>

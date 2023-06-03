@@ -9,7 +9,12 @@
 
 <header>
   <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" class="header-image">
-  <h5 class="logout"><a href="{% url 'logout' %}">Log Out</a></h5>
+  <div class="topnav">
+    <a href="#">About</a>
+    <a href="/recipes/list">Recipes</a>
+    <a href="/recipes/search">Search</a>
+    <a href="{% url 'logout' %}">Log Out</a>
+  </div>
   <h1 >Cozy Recipes</h1>
 </header>
 
@@ -24,8 +29,6 @@
     <b>Rating: </b> {{object.rating}} <br><br>
 
     <img src="{{object.pic.url}}" class="recipe-detail-image"/>
-
-    <h5><a href="/recipes/list">Return to view all recipes.</a></h5>
   </div>
 </body>
 

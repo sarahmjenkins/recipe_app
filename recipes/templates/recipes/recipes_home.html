@@ -4,10 +4,16 @@
 <head>
   <title>Cozy Recipes</title>
   <link rel="stylesheet" href="static/style.css">
+  <script src="static/home.js" defer></script>
 </head>
 
 <header>
-  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" class="header-image">
+  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" class="header-image"> 
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="#">About</a>
+    <a href="{% url 'login' %}">Log In</a>
+  </div>
   <h1>Cozy Recipes</h1>
 </header>
 
@@ -20,5 +26,10 @@
 </body>
 
 <footer>
+  <div class="website-counter-container">
+    <div>Number of visits to this site:</div>
+    <div class="website-counter"></div>
+    <div id="reset">Reset</div>
+  </div>
   <p class="photo-attribution">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
 </footer>
