@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<head>
+  <title>Cozy Recipes</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="static/home.js" defer></script>
+</head>
+
+<header>
+  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" class="header-image">
+  <div class="topnav">
+    <a href="/">Home</a>
+    <a href="{% url 'login' %}">Log In</a>
+    <a class="active" href="/about/">About</a>
+    <a href="/recipes/list">Recipes</a>
+    <a href="/recipes/search">Search</a>
+    <a href="{% url 'logout' %}">Log Out</a>
+  </div>
+  <h1>About Sarah Jenkins</h1>
+  <h3>The creator of the Cozy Recipes app</h3>
+</header>
+
+<body>
+  <p>This app was created the final project of the Python Specialization<br>of CareerFoundry's Full Stack Web Development Certification program.</p>
+  <p>To learn more about me, visit my</p>
+  <p><a href="https://www.github.com/sarahmjenkins">GitHub</a></p>
+  <p><a href="https://www.linkedin.com/in/sarahmjenkins">LinkedIn</a></p>
+  <p><a href="https://sarahmjenkins.github.io/portfolio-website">Portfolio Website</a></p>
+  <p>Happy cooking and stay cozy!</p>
+</body>
+
+<footer>
+  <p class="photo-attribution">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
+</footer>
