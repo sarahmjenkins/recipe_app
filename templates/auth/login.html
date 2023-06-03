@@ -4,31 +4,24 @@
 
 <head>
   <title>Log in to View Recipes</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
-
-    * {
-      font-family: Poppins, sans-serif
-    }
-  </style>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <header>
-  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" width="100%" height="240px"
-    style="object-fit:cover">
-  <h1 style="text-align:center">Log In</h1>
+  <img src="{% static 'recipes/images/kitchen.jpg' %}" alt="header-image" class="header-image">
+  <h1>Log In</h1>
 </header>
 
 {% if error_message %}
   {{error_message}}
 {% endif %} 
 
-<form action="" method="POST" style="text-align:center">
+<form action="" method="POST">
   {% csrf_token %} 
   {{form}}
   <button type="submit">Log In</button>
 </form>
 
-<footer style="margin-top:50px">
-  <p style="font-size:8px; text-align:center">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
+<footer>
+  <p class="photo-attribution">All images from <a href='https://unsplash.com/'>Unsplash</a>.</p>
 </footer>
